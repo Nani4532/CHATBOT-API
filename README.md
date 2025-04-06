@@ -1,16 +1,21 @@
-<!--  -->
-## Running locally
+## Running Locally
 
-You will need to use the environment variables [defined in `.env.example`](.env.example) to run Next.js AI Chatbot. It's recommended.
+To run the Next.js AI Chatbot locally, you’ll need to use the environment variables defined in [`.env.example`](.env.example).
 
-> Note: You should not commit your `.env` file or it will expose secrets that will allow others to control access to your various AI and authentication provider accounts.
+### 🔐 Environment Setup
 
-1. Install Vercel CLI: `npm i -g vercel`
-2. Link local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
-3. Download your environment variables: `vercel env pull`
+1. Create a file named `.env.local` in the root of the project.
+2. Copy contents from `.env.example` and fill in the required API keys or secret keys.
+
+> ⚠️ **Important:** Never commit your `.env.local` file to version control. It contains sensitive credentials that could compromise your accounts.
+
+---
+
+### 🧱 Build and Run
+
+Make sure you have `pnpm` installed. Then run:
 
 ```bash
 pnpm install
- pnpm dev 
-
-Your app template should now be running on [localhost:3000](http://localhost:3000/).
+pnpm build      # Creates the .next folder
+pnpm dev        # Starts the development server
